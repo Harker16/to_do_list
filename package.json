@@ -18,7 +18,9 @@
   "homepage": "https://github.com/Harker16/to_do_list#readme",
   "dependencies": {
     "chai": "^3.5.0",
+    "http-server": "^0.9.0",
     "mocha": "^2.5.3",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "zombie": "^4.2.1"
   }
 }
