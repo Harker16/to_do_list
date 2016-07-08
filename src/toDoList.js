@@ -1,10 +1,11 @@
 /*jslint node: true */
 
-var ToDo = require('../src/toDo.js');
+(function(exports){
 
-function ToDoList() {
-this.list = [];
-}
+	function ToDoList(ToDo) {
+	this.list = [];
+	this.ToDo = ToDo;
+	}
 
 	ToDoList.prototype = {
 
@@ -13,19 +14,17 @@ this.list = [];
 		},
 
 		convertListToHTML: function() {
-			var arrayLength = this.list.length;
-			var returnArray = ['<ul>','\n'];
-			for (var i = 0; i < arrayLength; i++) {
-    	returnArray.push(('<li>' + this.list[i].display() + '<li>' + '\n'));
-			}
-			returnArray.push('<ul>');
-			return returnArray.join("");
+			var returnString = "<ul>";
+
+			this.list.forEach(function(taskItem){
+				returnString += ("<li><div>"+taskItem.entry+"</div></li>");
+			});
+			return returnString += '</ul>';
 		},
 
 		createToDo: function(value) {
-			this.list.push(new ToDo(value));
-
-		}
+			this.list.push(new this.ToDo(value));
+		},
 	};
-
-	module.exports = ToDoList;
+	exports.ToDoList = ToDoList;
+})(this);

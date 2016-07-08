@@ -1,14 +1,14 @@
 /*jslint node: true */
-
 'use strict';
 
-function ToDo(entry){
-	this.entry = entry;
-	this.complete = false;
-}
+(function(exports) {
+	function ToDo(entry){
+		this.entry = entry;
+		this.complete = false;
+	}
 
-ToDo.prototype.display = function(){
-return (this.entry);
-};
-
-module.exports = ToDo;
+	ToDo.prototype.display = function() {
+		return (this.entry);
+	};
+	exports.ToDo = ToDo
+})(this);

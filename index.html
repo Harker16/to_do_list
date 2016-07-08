@@ -3,10 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>To Do List</title>
-    <!-- <script src ="src/toDo.js" ></script>
-    <script src ="src/toDoList.js" ></script> -->
   </head>
-  <body>
-    <h1>This is a test page</h1>
-  </body>
+    <body>
+      <h1>To Do List</h1><br>
+      <br>
+      <div id="todos">
+
+      </div>
+      <form id="newtodo" action="todo/new" method="post">
+        <input id="task" type="text" placeholder="Write to-do here">
+        <input id="Add" type="submit" value="Add">
+      </form>
+    </body>
+  <script src ="src/toDo.js" ></script>
+  <script src ="src/toDoList.js" ></script>
+  <script src ="src/index.js" ></script>
 </html>
